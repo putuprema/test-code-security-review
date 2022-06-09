@@ -18,7 +18,7 @@ public class UserService : IUserService
                 Password = "123456",
                 DisplayName = "Putu",
                 BankAccountNumber = "13719713158835300",
-                SocialSecurityNumber = "078051120" 
+                SocialSecurityNumber = "078051121" 
             };
 
             await db.ExecuteAsync(
