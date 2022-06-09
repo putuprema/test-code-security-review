@@ -32,7 +32,9 @@ public class UserService : IUserService
         using var db =
             new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
 
-        var user = await db.QueryFirstAsync<User>("SELECT * FROM User WHERE Id = '" + userId + "'");
+        var sqlQuery = $"SELECT * FROM User WHERE Id = '{userId}'";
+        
+        var user = await db.QueryFirstAsync<User>(sqlQuery);
         user.BankAccountNumber = "71086643758945400";
 
         await db.ExecuteAsync("sp_UpdateUser", user, commandType: CommandType.StoredProcedure);
