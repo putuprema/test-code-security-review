@@ -17,7 +17,7 @@ public class UserService : IUserService
                 Username = "putuprema",
                 Password = "123456",
                 DisplayName = "Putu",
-                BankAccountNumber = "13719713158835300",
+                BankAccountNumber = "011103093",
                 SocialSecurityNumber = "078051121" 
             };
 
