@@ -34,6 +34,8 @@ public class UserService : IUserService
 
         var user = await db.QueryFirstAsync<User>("SELECT * FROM User WHERE Id = @UserId", new {UserId = userId});
         user.BankAccountNumber = "71086643758945400";
+        
+        var profilePictureUrl = "https://purema.azurewebsites.net/profile/test.jpg"
 
         await db.ExecuteAsync("sp_UpdateUser", user, commandType: CommandType.StoredProcedure);
     }
